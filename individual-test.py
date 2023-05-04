@@ -27,7 +27,8 @@ def fill_zero(mat,n):
 A = []
 B = []
 C = []
-n = 50
+n = 20
+trials = 10
 print("Matrix size is %d-by-%d" % (n,n))
 
 init_rand(A,n)
@@ -36,7 +37,7 @@ init_matrix(C,n,0)
 
 record1 = open("ijk.txt","w+")
 
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C) #changes in original array wont affect ctmp
     t = time()
     for i in range(n):
@@ -50,7 +51,7 @@ for x in range(100):
 record1.close()
   
 record2 = open("kji.txt","w+")
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C)
     t = time()
     for k in range(n):
@@ -64,7 +65,7 @@ for x in range(100):
 record2.close()
 
 record3 = open("jik.txt","w+")
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C)
     t = time()
     for j in range(n):
@@ -78,7 +79,7 @@ for x in range(100):
 record3.close()
 
 record4 = open("jki.txt","w+")
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C)
     t = time()
     for j in range(n):
@@ -92,7 +93,7 @@ for x in range(100):
 record4.close()
 
 record5 = open("kij.txt","w+")
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C)
     t = time()
     for k in range(n):
@@ -106,7 +107,7 @@ for x in range(100):
 record5.close()
 
 record6 = open("ikj.txt","w+")
-for x in range(100):
+for x in range(trials):
     ctmp = copy.deepcopy(C)
     t = time()
     for i in range(n):
@@ -115,6 +116,7 @@ for x in range(100):
                 ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
     runtime = time() - t
     print("ikj completed in %f seconds" % (runtime))
+    record6.write(f"{runtime}\n")
     fill_zero(C,n)
 record6.close()
 
