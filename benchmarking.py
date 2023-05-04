@@ -62,9 +62,9 @@ fill_zero(C,n)
 ctmp = copy.deepcopy(C)
 t = time()
 for j in range(n):
-  for i in range(n):
-    for k in range(n):
-      ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
+    for i in range(n):
+        for k in range(n):
+            ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
 runtime = time() - t
 print("jik completed in %f seconds" % (runtime))
 fill_zero(C,n)
@@ -73,9 +73,9 @@ fill_zero(C,n)
 ctmp = copy.deepcopy(C)
 t = time()
 for j in range(n):
-  for k in range(n):
-    for i in range(n):
-      ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
+    for k in range(n):
+        for i in range(n):
+            ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
 runtime = time() - t
 print("jki completed in %f seconds" % (runtime))
 fill_zero(C,n)
@@ -84,9 +84,9 @@ fill_zero(C,n)
 ctmp = copy.deepcopy(C)
 t = time()
 for k in range(n):
-  for i in range(n):
-    for j in range(n):
-      ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
+    for i in range(n):
+        for j in range(n):
+            ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
 runtime = time() - t
 print("kij completed in %f seconds" % (runtime))
 fill_zero(C,n)
@@ -96,9 +96,9 @@ fill_zero(C,n)
 ctmp = copy.deepcopy(C)
 t = time()
 for i in range(n):
-  for k in range(n):
-    for j in range(n):
-      ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
+    for k in range(n):
+        for j in range(n):
+            ctmp[i][j] = ctmp[i][j] + A[i][k]*B[k][j]
 runtime = time() - t
 print("ikj completed in %f seconds" % (runtime))
 fill_zero(C,n)
